@@ -23,9 +23,9 @@ export class MapComponent implements OnInit{
       center: [this.lng, this.lat]
       });
 
-      const marker1 = new mapboxgl.Marker()
-      .setLngLat([12.55, 55.70])
-      .addTo(this.map);
+      // const marker1 = new mapboxgl.Marker()
+      // .setLngLat([12.55, 55.70])
+      // .addTo(this.map);
   }
   
 }
