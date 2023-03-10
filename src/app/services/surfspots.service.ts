@@ -1,20 +1,22 @@
-import { Injectable, OnInit } from '@angular/core';
+import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http'
+import {Observable} from 'rxjs'
+import { surfspot } from '../interfaces/surfspot';
 
 @Injectable({
   providedIn: 'root'
 })
-export class SurfspotsService implements OnInit{
 
-  private apiUrl = 'http://spotguide.vercel.app/api'
+export class SurfspotsService {
 
-  constructor(private http:HttpClient) { }
+  url: string = "https://spotguide.vercel.app/api/"
 
-  getTask(){
-    return this.http.get(this.apiUrl)
-   }
+ constructor(private http: HttpClient){}
 
-   ngOnInit(): void {
-     this.getTask()
-   }
+ // fetch surfspots from DB
+
+ getSurfspots(): Observable <surfspot[]>{
+  return this.http.get<surfspot[]>(this.url);
+ }
+
 }
