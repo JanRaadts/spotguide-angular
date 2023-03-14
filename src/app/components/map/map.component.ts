@@ -18,6 +18,9 @@ export class MapComponent implements OnInit{
   lng = 10.30;
   surfspots: surfspot[] =[]
 
+  showPopUp: boolean = false
+  popUpSpot!: surfspot 
+
   constructor(private surfspotsService: SurfspotsService){
   this.surfspotsService.getSurfspots().subscribe({
     next: data => {
@@ -45,9 +48,14 @@ export class MapComponent implements OnInit{
       .addTo(this.map);
       // add a clickEvent to the marker
       surfspotMarker.getElement().addEventListener('click', () => {
-       console.log(marker)
+       this.showPopUp = !this.showPopUp
+       this.popUpSpot = marker
       });
     })
+  }
+
+  closePopUp(){
+    this.showPopUp = !this.showPopUp
   }
 
 }

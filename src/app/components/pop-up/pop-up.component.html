@@ -1,0 +1,20 @@
+<div class="popUpContainer">
+    <div class="popUp">
+      <a class="link">
+        <section class="popUpImageSection">
+          <img class="popUpImage"
+            src="{{popUpSpot.image}}"
+            priority
+          />
+        </section>
+        <h1 class="title">{{popUpSpot.name}}</h1>
+        <div class="popUpContent">
+          <!-- <p>{{popUpSpot.description}}</p> -->
+        </div>
+      </a>
+
+      <button class="closeButton" (click)="closePopUp()">
+        x
+      </button>
+    </div>
+  </div>
