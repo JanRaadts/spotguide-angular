@@ -9,12 +9,11 @@ import { surfspot } from '../interfaces/surfspot';
 
 export class SurfspotsService {
 
-  url: string = "https://spotguide.vercel.app/api/"
+  url: string = "https://spotguide-server.vercel.app/api/surfspots"
 
  constructor(private http: HttpClient){}
 
  // fetch surfspots from DB
-
  getSurfspots(): Observable <surfspot[]>{
   return this.http.get<surfspot[]>(this.url);
  }
