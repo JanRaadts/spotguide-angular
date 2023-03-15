@@ -10,13 +10,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatIconModule} from '@angular/material/icon';
 import { MapHeaderComponent } from './components/map-header/map-header.component'
 import { FormsModule } from '@angular/forms';
+import { LoadingSpinnerComponent } from './components/loading-spinner/loading-spinner.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MapComponent,
     PopUpComponent,
-    MapHeaderComponent
+    MapHeaderComponent,
+    LoadingSpinnerComponent
   ],
   imports: [
     BrowserModule,

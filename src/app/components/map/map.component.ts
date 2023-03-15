@@ -17,10 +17,6 @@ export class MapComponent implements OnInit{
   lat = 53.07;
   lng = 8.97;
   surfspots: surfspot[] =[]
-
-
-
- 
   mapLoading: boolean = true
   showPopUp: boolean = false
   popUpSpot!: surfspot 
@@ -33,9 +29,7 @@ export class MapComponent implements OnInit{
     }})
   }
 
-
   ngOnInit() {
-
     this.map = new mapboxgl.Map({
       accessToken: "pk.eyJ1IjoiamFyYWtsZSIsImEiOiJjbGJtbzlsYXkwNnY3M29yeDZhOGFsZW15In0.RFqqOxiya31Sjc70F1fmFg",
       container: 'map',
@@ -43,7 +37,6 @@ export class MapComponent implements OnInit{
       zoom: 5,
       center: [this.lng, this.lat]
       });
-
       this.map.once('idle', (e) => {
         this.mapLoading = false
           })

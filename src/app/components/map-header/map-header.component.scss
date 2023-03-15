@@ -13,7 +13,6 @@
   justify-content: space-between;
 }
 
-//section
 
 .form{
     width: 100%;
@@ -22,11 +21,10 @@
   align-items: center;
 }
 
-//form
 
 .inputText{
-    padding-left: 5%;
-  width: 80vw;
+    padding-left: 1rem;
+  width: 90vw;
   height: 3rem;
   border: none;
   background: #ffffff;
@@ -39,7 +37,6 @@
   }
 }
 
-//input
 
 .button{
     background: rgba(255, 255, 255, 0);
@@ -47,7 +44,6 @@
     margin-top: 5px;
 }
 
-//button
 
 .icon{
     margin: 0 1rem 0 1rem;
