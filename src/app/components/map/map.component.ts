@@ -16,8 +16,9 @@ export class MapComponent implements OnInit{
   style = 'mapbox://styles/jarakle/clbpbe5ii000z14msirbrwos5';
   lat = 53.07;
   lng = 8.97;
-  surfspots: surfspot[] =[]
+  surfspots: surfspot[] = []
   mapLoading: boolean = true
+  minLoading: boolean = true
   showPopUp: boolean = false
   popUpSpot!: surfspot 
 
@@ -27,6 +28,9 @@ export class MapComponent implements OnInit{
         this.surfspots = data
         this.createMarker()
     }})
+    const timer: ReturnType<typeof setTimeout> = setTimeout(() => {
+      this.minLoading = false
+  }, 4000);
   }
 
   ngOnInit() {
