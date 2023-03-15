@@ -21,8 +21,17 @@
 
 
   <section class="headerContainer" *ngIf="showInputForm === false">
-   <mat-icon class="icon" (click)="getLocation()">location_searching</mat-icon>
-    <mat-icon class="icon" (click)="showInputForm = !showInputForm">search</mat-icon>
-    <mat-icon class="icon">menu</mat-icon> 
+    <div (click)="getLocation()" class="iconContainer">
+      <mat-icon class="icon" >location_searching</mat-icon>
+      <p>Um mich herum</p>
+    </div>
+    <div (click)="showInputForm = !showInputForm" class="iconContainer">
+      <mat-icon class="icon" >search</mat-icon>
+      <p>Um einen Ort</p>
+    </div>
+    <div class="iconContainer">
+      <mat-icon class="icon">menu</mat-icon> 
+      <p>Menu</p>
+    </div>
   </section>
 

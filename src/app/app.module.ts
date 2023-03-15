@@ -11,6 +11,9 @@ import {MatIconModule} from '@angular/material/icon';
 import { MapHeaderComponent } from './components/map-header/map-header.component'
 import { FormsModule } from '@angular/forms';
 import { LoadingSpinnerComponent } from './components/loading-spinner/loading-spinner.component';
+import { SpotDetailPageComponent } from './components/spot-detail-page/spot-detail-page.component';
+import { SpotInfoDesktopComponent } from './components/spotdetailpageComps/spot-info-desktop/spot-info-desktop.component';
+import { SpotInfoMobileComponent } from './components/spotdetailpageComps/spot-info-mobile/spot-info-mobile.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +21,10 @@ import { LoadingSpinnerComponent } from './components/loading-spinner/loading-sp
     MapComponent,
     PopUpComponent,
     MapHeaderComponent,
-    LoadingSpinnerComponent
+    LoadingSpinnerComponent,
+    SpotDetailPageComponent,
+    SpotInfoDesktopComponent,
+    SpotInfoMobileComponent
   ],
   imports: [
     BrowserModule,

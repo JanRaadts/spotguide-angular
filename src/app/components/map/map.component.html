@@ -1,4 +1,4 @@
-<app-loading-spinner *ngIf="mapLoading === true || surfspots.length < 1 || minLoading === true"></app-loading-spinner>
+<app-loading-spinner *ngIf="mapLoading === true || surfspots.length < 1"></app-loading-spinner>
 <!-- <app-loading-spinner></app-loading-spinner> -->
 <app-map-header (emitCoordinates)="flyToLocation($event)"></app-map-header>
 <div class="map-container" >

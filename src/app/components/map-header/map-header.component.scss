@@ -44,7 +44,20 @@
     margin-top: 5px;
 }
 
+.iconContainer{
+  width: 30vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  p{
+    margin-top: 5px;
+    font-size: 0.8rem;
+  }
+  
+}
 
 .icon{
-    margin: 0 1rem 0 1rem;
+    // margin: 0 1rem 0 1rem;
+    font-size: 1.5rem;
 }

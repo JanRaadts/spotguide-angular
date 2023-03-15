@@ -1,0 +1,17 @@
+<div *ngIf="spotLoaded === true">
+
+    <div *ngIf="mobileOrDesktop === true && infoOrSocial === true" class="infoContainer">
+        <app-spot-info-mobile></app-spot-info-mobile>
+    </div>
+    
+    <div *ngIf="mobileOrDesktop === false && infoOrSocial === true" class="infoContainer">
+        <app-spot-info-desktop></app-spot-info-desktop>
+    </div>
+
+    <div *ngIf="infoOrSocial === false" class="socialContainer" >
+        <p>hier entsteht der social bereich</p>
+    </div>
+</div>
+
+
+

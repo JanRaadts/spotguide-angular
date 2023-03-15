@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { SurfspotsService } from './services/surfspots.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'spotguide-angular';
+  constructor(private surfspotsService: SurfspotsService){
+   this.surfspotsService.getSurfspots().subscribe({
+    next: data => {
+        this.surfspotsService.changeSurfspots(data)
+    }})
+  }
 }

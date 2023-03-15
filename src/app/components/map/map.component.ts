@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
 import * as mapboxgl from 'mapbox-gl';
 import { surfspot } from 'src/app/interfaces/surfspot';
 import { SurfspotsService } from 'src/app/services/surfspots.service';
@@ -12,25 +13,24 @@ import { SurfspotsService } from 'src/app/services/surfspots.service';
 
 export class MapComponent implements OnInit{
 
+  subscription!: Subscription;
   map!: mapboxgl.Map;
   style = 'mapbox://styles/jarakle/clbpbe5ii000z14msirbrwos5';
   lat = 53.07;
   lng = 8.97;
   surfspots: surfspot[] = []
   mapLoading: boolean = true
-  minLoading: boolean = true
+  minLoading: boolean = false
   showPopUp: boolean = false
   popUpSpot!: surfspot 
 
   constructor(private surfspotsService: SurfspotsService){
-  this.surfspotsService.getSurfspots().subscribe({
-    next: data => {
-        this.surfspots = data
-        this.createMarker()
-    }})
-    const timer: ReturnType<typeof setTimeout> = setTimeout(() => {
-      this.minLoading = false
-  }, 4000);
+    this.subscription = this.surfspotsService.onChangeSurfspots().subscribe({
+      next: data => {
+          this.surfspots = data
+          this.createMarker()
+      }})
+      this.surfspotsService.becomeSurfspots()
   }
 
   ngOnInit() {
