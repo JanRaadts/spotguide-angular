@@ -9,12 +9,12 @@
         </section>
         <h1 class="title">{{popUpSpot.name}}</h1>
         <div class="popUpContent">
-          <!-- <p>{{popUpSpot.description}}</p> -->
+          <p>{{popUpSpot.description?.slice(0, 110)}}...</p>
         </div>
       </a>
 
       <button class="closeButton" (click)="closePopUp()">
-        x
+        <mat-icon>close</mat-icon>
       </button>
     </div>
   </div>

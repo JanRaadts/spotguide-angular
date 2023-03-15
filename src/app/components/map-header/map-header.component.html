@@ -1,0 +1,28 @@
+
+<section class="headerContainer" *ngIf="showInputForm === true">
+    <form class="form" (ngSubmit)="searchCity()">
+      
+      <mat-icon (click)="showInputForm = !showInputForm" class="icon">arrow_back</mat-icon>
+      
+      <input class="inputText"
+        autoFocus
+        type="text"
+        name="place" 
+        id="place" 
+        [(ngModel)]="place"
+        placeholder="Gib einen Ort ein"
+        priority
+      >
+      <button class="button" type="submit">
+        <mat-icon class="icon">search</mat-icon>
+      </button>
+    </form>
+  </section>
+
+
+  <section class="headerContainer" *ngIf="showInputForm === false">
+   <mat-icon class="icon" (click)="getLocation()">location_searching</mat-icon>
+    <mat-icon class="icon" (click)="showInputForm = !showInputForm">search</mat-icon>
+    <mat-icon class="icon">menu</mat-icon> 
+  </section>
+

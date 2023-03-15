@@ -14,10 +14,14 @@ export class MapComponent implements OnInit{
 
   map!: mapboxgl.Map;
   style = 'mapbox://styles/jarakle/clbpbe5ii000z14msirbrwos5';
-  lat = 54.40;
-  lng = 10.30;
+  lat = 53.07;
+  lng = 8.97;
   surfspots: surfspot[] =[]
 
+
+
+ 
+  mapLoading: boolean = true
   showPopUp: boolean = false
   popUpSpot!: surfspot 
 
@@ -36,9 +40,13 @@ export class MapComponent implements OnInit{
       accessToken: "pk.eyJ1IjoiamFyYWtsZSIsImEiOiJjbGJtbzlsYXkwNnY3M29yeDZhOGFsZW15In0.RFqqOxiya31Sjc70F1fmFg",
       container: 'map',
       style: this.style,
-      zoom: 9,
+      zoom: 5,
       center: [this.lng, this.lat]
       });
+
+      this.map.once('idle', (e) => {
+        this.mapLoading = false
+          })
   }
 
   createMarker(){
@@ -50,12 +58,25 @@ export class MapComponent implements OnInit{
       surfspotMarker.getElement().addEventListener('click', () => {
        this.showPopUp = !this.showPopUp
        this.popUpSpot = marker
+       this.map.flyTo({
+        center: [marker.longitude, marker.latitude],
+        essential: true,
+        zoom: 12
+        });
       });
     })
   }
 
   closePopUp(){
     this.showPopUp = !this.showPopUp
+  }
+
+  flyToLocation(coordinates:any){
+this.map.flyTo({
+  center: coordinates,
+  essential: true,
+  zoom: 12
+  })
   }
 
 }
