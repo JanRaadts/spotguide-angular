@@ -1,1 +1,44 @@
-<p>spot-info-desktop works!</p>
+<section class="section">
+    <section class="container">
+      <img class="image"
+        src={{currentSpot.image}}
+        width={800}
+        height={600}
+        priority
+      />
+
+    </section>
+    <section class="container">
+    <h1 class="title">{{currentSpot.name}}</h1>
+      <section class="btnSection">
+        <a target="_blank">
+         <mat-icon>directions</mat-icon>
+        </a>
+        <mat-icon>share</mat-icon>
+        <mat-icon>favorite</mat-icon>
+      </section>
+      <section class="descriptionSection">
+        <p class="pContainer">{{currentSpot.description}}</p>
+      </section>
+      <section class="specsSection">
+        <p class="pContainer">
+          <span class="span">Surfbare Windrichtungen: </span>
+          {{currentSpot.winddirection}}
+        </p>
+        <p class="pContainer">
+          <span class="span">Center/Schule: </span>
+          {{currentSpot.surfcenter}}
+        </p>
+        <p class="pContainer">
+          <span class="span">Parken: </span>
+          {{currentSpot.parking}}
+        </p>
+        <p class="pContainer">
+          <span class="span">Übernachten: </span>
+          {{currentSpot.camping}}
+        </p>
+      </section>
+    
+    </section>
+  </section>
+

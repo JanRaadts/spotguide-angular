@@ -30,7 +30,7 @@ export class MapComponent implements OnInit{
           this.surfspots = data
           this.createMarker()
       }})
-      this.surfspotsService.becomeSurfspots()
+      
   }
 
   ngOnInit() {
@@ -44,6 +44,8 @@ export class MapComponent implements OnInit{
       this.map.once('idle', (e) => {
         this.mapLoading = false
           })
+
+    this.surfspotsService.becomeSurfspots()
   }
 
   createMarker(){

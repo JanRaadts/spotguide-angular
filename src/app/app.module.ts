@@ -14,6 +14,10 @@ import { LoadingSpinnerComponent } from './components/loading-spinner/loading-sp
 import { SpotDetailPageComponent } from './components/spot-detail-page/spot-detail-page.component';
 import { SpotInfoDesktopComponent } from './components/spotdetailpageComps/spot-info-desktop/spot-info-desktop.component';
 import { SpotInfoMobileComponent } from './components/spotdetailpageComps/spot-info-mobile/spot-info-mobile.component';
+import { SpotInfoHeaderComponent } from './components/spotdetailpageComps/spot-info-header/spot-info-header.component';
+import { SpotSocialContainerComponent } from './components/spotdetailpageComps/spot-social-container/spot-social-container.component';
+import { SpotSocialFormComponent } from './components/spotdetailpageComps/spot-social-form/spot-social-form.component';
+import { SpotSocialCommentComponent } from './components/spotdetailpageComps/spot-social-comment/spot-social-comment.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +28,11 @@ import { SpotInfoMobileComponent } from './components/spotdetailpageComps/spot-i
     LoadingSpinnerComponent,
     SpotDetailPageComponent,
     SpotInfoDesktopComponent,
-    SpotInfoMobileComponent
+    SpotInfoMobileComponent,
+    SpotInfoHeaderComponent,
+    SpotSocialContainerComponent,
+    SpotSocialFormComponent,
+    SpotSocialCommentComponent
   ],
   imports: [
     BrowserModule,

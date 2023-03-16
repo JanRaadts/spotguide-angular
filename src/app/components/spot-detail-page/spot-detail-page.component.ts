@@ -28,6 +28,7 @@ ngOnInit() {
         this.mobileOrDesktop = false;
       } else this.mobileOrDesktop = true;
     })
+    this.surfspotsService.becomeSurfspots()
 }
 
   constructor(private route: ActivatedRoute, private surfspotsService: SurfspotsService){
@@ -38,7 +39,10 @@ ngOnInit() {
           this.currentSpot = this.surfspots.find((spot: any) => spot.slug === this.slug);
           this.spotLoaded = true
       }})
-      this.surfspotsService.becomeSurfspots()
+  }
+
+  changeInfoOrSocial(data: boolean){
+this.infoOrSocial = data
   }
 
 

@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { surfspot } from 'src/app/interfaces/surfspot';
 
 @Component({
   selector: 'app-spot-info-desktop',
@@ -7,4 +8,5 @@ import { Component } from '@angular/core';
 })
 export class SpotInfoDesktopComponent {
 
+  @Input() currentSpot!: surfspot
 }

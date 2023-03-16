@@ -1,15 +1,20 @@
 <div *ngIf="spotLoaded === true">
+    <app-spot-info-header (emitInfoOrSocial)="changeInfoOrSocial($event)"></app-spot-info-header>
 
     <div *ngIf="mobileOrDesktop === true && infoOrSocial === true" class="infoContainer">
-        <app-spot-info-mobile></app-spot-info-mobile>
+        <app-spot-info-mobile [currentSpot]="currentSpot"></app-spot-info-mobile>
     </div>
     
     <div *ngIf="mobileOrDesktop === false && infoOrSocial === true" class="infoContainer">
-        <app-spot-info-desktop></app-spot-info-desktop>
+        <app-spot-info-desktop [currentSpot]="currentSpot"></app-spot-info-desktop>
     </div>
 
     <div *ngIf="infoOrSocial === false" class="socialContainer" >
-        <p>hier entsteht der social bereich</p>
+        <!-- <app-spot-social-container [currentSpot]="currentSpot"></app-spot-social-container> -->
+        <section class="commentsList">
+            <app-spot-social-comment *ngFor="let comment of currentSpot.comments" [comment]="comment"></app-spot-social-comment>
+          </section>
+        <app-spot-social-form></app-spot-social-form>
     </div>
 </div>
 

@@ -1,0 +1,19 @@
+<section class="comment">
+    <section class="section">
+      <img class="image"
+        src={{comment.avatar}}
+        alt="Profilbild"
+      />
+      <section class="innerSection">
+        <p class="name">{{comment.name}}</p>
+        <p class="date">{{comment.date}}</p>
+      </section>
+    </section>
+    <p class="text">{{comment.text}}</p>
+   
+      <img *ngIf="comment.picture != 'null'" class="commentImage"
+        src={{comment.picture}}
+        alt="kommentar bild"
+        priority
+      />
+  </section>
