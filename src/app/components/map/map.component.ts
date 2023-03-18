@@ -33,12 +33,11 @@ export class MapComponent implements OnInit{
           this.surfspots = data
           this.createMarker()
       }})
-
+      
     this.subscription = this.mapService.onChangeCoordinates().subscribe(value => this.coordinates = value)
     this.subscription = this.mapService.onChangePopUpSpot().subscribe(value => this.popUpSpot = value)
     this.subscription = this.mapService.onChangeZoom().subscribe(value => this.zoom = value)
     this.subscription = this.mapService.onToggleShowPopUp().subscribe(value => this.showPopUp = value)
-
     this.mapService.becomeShowPopUp()
     this.mapService.becomeZoom()
     this.mapService.becomePopUpSpot()
@@ -47,7 +46,6 @@ export class MapComponent implements OnInit{
 
   ngOnInit() {
     this.surfspotsService.becomeSurfspots()
-    
     this.map = new mapboxgl.Map({
       accessToken: "pk.eyJ1IjoiamFyYWtsZSIsImEiOiJjbGJtbzlsYXkwNnY3M29yeDZhOGFsZW15In0.RFqqOxiya31Sjc70F1fmFg",
       container: 'map',
@@ -67,18 +65,14 @@ export class MapComponent implements OnInit{
       const surfspotMarker = new mapboxgl.Marker()
       .setLngLat([marker.longitude, marker.latitude])
       .addTo(this.map);
+
       // add a clickEvent to the marker
       surfspotMarker.getElement().addEventListener('click', () => {
-
         this.mapService.changePopUpSpot(marker)
         this.mapService.changeCoordinates([marker.longitude, marker.latitude])
         this.mapService.toggleShowPopUp()
         this.mapService.changeZoom(12)
-
-      //  this.showPopUp = !this.showPopUp
-      //  this.popUpSpot = marker
-
-       this.map.flyTo({
+        this.map.flyTo({
         center: [marker.longitude, marker.latitude],
         essential: true,
         zoom: 12
@@ -88,7 +82,6 @@ export class MapComponent implements OnInit{
   }
 
   closePopUp(){
-    // this.showPopUp = !this.showPopUp
     this.mapService.toggleShowPopUp()
 
   }

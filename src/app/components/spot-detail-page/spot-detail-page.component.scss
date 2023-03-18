@@ -3,10 +3,15 @@
 }
 
 .socialContainer{
-    margin-top: 105px;
+    margin-top: 75px;
 }
 
 .commentsList{
-    margin-bottom: 85px;
-    padding-bottom: 85px
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    width: 100vw;
+    height: calc(100svh - 160px);
+    overflow: scroll;
+    display: flex;
+    flex-direction: column;
 }
