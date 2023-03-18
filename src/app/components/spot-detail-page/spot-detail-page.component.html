@@ -8,15 +8,10 @@
     <div *ngIf="mobileOrDesktop === false && infoOrSocial === true" class="infoContainer">
         <app-spot-info-desktop [currentSpot]="currentSpot"></app-spot-info-desktop>
     </div>
-
     <div *ngIf="infoOrSocial === false" class="socialContainer" >
-        <!-- <app-spot-social-container [currentSpot]="currentSpot"></app-spot-social-container> -->
         <section class="commentsList">
             <app-spot-social-comment *ngFor="let comment of currentSpot.comments" [comment]="comment"></app-spot-social-comment>
           </section>
         <app-spot-social-form></app-spot-social-form>
     </div>
 </div>
-
-
-

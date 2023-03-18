@@ -13,4 +13,5 @@ export class PopUpComponent {
 closePopUp(){
 this.onClosePopUp.emit()
 }
+
 }

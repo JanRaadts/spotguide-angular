@@ -1,1 +1,33 @@
-<p>spot-social-form works!</p>
+<form class="form" onSubmit={handleNewEntry}>
+    <!-- <section class="previewSection">
+      {image && <ImagePreview file={image} />}
+    </section> -->
+
+    <input class="inputText"
+      type="text"
+      name="varText"
+      placeholder="deine Nachricht.."
+      required
+    >
+    <!-- <section>
+      <div class="pictureUploadContainer">
+        <label class="labelPicture" htmlFor="avatar">
+          <div>
+            <mat-icon>image</mat-icon>
+          </div>
+        </label>
+        <input class="pictureInput"
+          type="file"
+          name="avatar"
+          id="avatar"
+          accept="image/png, image/gif, image/jpeg"
+          onChange={(event) => {
+            setImage(event.target.files[0]);
+          }}
+        />
+      </div>
+    </section> -->
+    <button class="btn" type="submit">
+      <mat-icon>send</mat-icon>
+    </button>
+  </form>
