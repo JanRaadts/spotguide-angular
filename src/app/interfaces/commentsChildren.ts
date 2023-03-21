@@ -4,4 +4,5 @@ export interface commentsChildren{
   date?: string,
   avatar?: string,
   picture?: string,
+  _id?: string
 }

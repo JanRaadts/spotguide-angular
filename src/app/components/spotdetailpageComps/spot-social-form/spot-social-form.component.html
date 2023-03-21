@@ -1,11 +1,13 @@
-<form class="form" onSubmit={handleNewEntry}>
+<form class="form" (ngSubmit)="newComment()">
     <!-- <section class="previewSection">
       {image && <ImagePreview file={image} />}
     </section> -->
 
     <input class="inputText"
       type="text"
-      name="varText"
+      name="commentText"
+      id="commentText" 
+      [(ngModel)]="commentText"
       placeholder="deine Nachricht.."
       required
     >

@@ -10,8 +10,8 @@
     </div>
     <div *ngIf="infoOrSocial === false" class="socialContainer" >
         <section class="commentsList">
-            <app-spot-social-comment *ngFor="let comment of currentSpot.comments" [comment]="comment"></app-spot-social-comment>
+            <app-spot-social-comment *ngFor="let comment of comments" [comment]="comment"></app-spot-social-comment>
           </section>
-        <app-spot-social-form></app-spot-social-form>
+        <app-spot-social-form [currentSpot]="currentSpot"></app-spot-social-form>
     </div>
 </div>

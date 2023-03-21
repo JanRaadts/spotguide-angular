@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http'
 import {Observable, Subject} from 'rxjs'
 import { surfspot } from '../interfaces/surfspot';
+import { commentsChildren } from '../interfaces/commentsChildren';
 
 
 @Injectable({
@@ -20,6 +21,15 @@ export class SurfspotsService {
  getSurfspots(): Observable <surfspot[]>{
   return this.http.get<surfspot[]>(this.url);
  }
+
+ // change surfspot in the DB
+ putSurfspot(data: surfspot): Observable <surfspot[]>{
+  let changeUrl = `${this.url}/${data._id}`
+  return this.http.put<surfspot[]>(changeUrl, data);
+ }
+
+
+
 
  changeSurfspots(data:any):void{
   this.surfspots = data;

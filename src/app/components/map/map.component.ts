@@ -60,6 +60,9 @@ export class MapComponent implements OnInit{
           this.surfspotsService.becomeSurfspots()   
   }
 
+
+
+
   createMarker(){
     this.surfspots.map((marker: any) => {
       const surfspotMarker = new mapboxgl.Marker()

@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { surfspot } from 'src/app/interfaces/surfspot';
 import { Subscription, Observable, fromEvent } from 'rxjs';
 import { SurfspotsService } from 'src/app/services/surfspots.service';
+import { commentsChildren } from 'src/app/interfaces/commentsChildren';
 
 @Component({
   selector: 'app-spot-detail-page',
@@ -15,6 +16,7 @@ export class SpotDetailPageComponent implements OnInit {
   slug: any = ""
   surfspots: any
   currentSpot!: surfspot
+  comments!: commentsChildren []
   spotLoaded: boolean = false
   infoOrSocial: boolean = true
   mobileOrDesktop: boolean = true
@@ -28,6 +30,7 @@ ngOnInit() {
         this.mobileOrDesktop = false;
       } else this.mobileOrDesktop = true;
     })
+    this.getWindowWith()
     this.surfspotsService.becomeSurfspots()
 }
 
@@ -37,6 +40,7 @@ ngOnInit() {
         this.slug = this.route.snapshot.paramMap.get('slug')
           this.surfspots = data
           this.currentSpot = this.surfspots.find((spot: any) => spot.slug === this.slug);
+          this.comments = this.currentSpot.comments.reverse()
           this.spotLoaded = true
       }})
   }
@@ -45,6 +49,10 @@ ngOnInit() {
 this.infoOrSocial = data
   }
 
-
+getWindowWith(){
+  if (window.innerWidth >= 700) {
+    this.mobileOrDesktop = false;
+  } else this.mobileOrDesktop = true;
+}
 
 }
