@@ -4,11 +4,26 @@ import * as mapboxgl from 'mapbox-gl';
 import { surfspot } from 'src/app/interfaces/surfspot';
 import { SurfspotsService } from 'src/app/services/surfspots.service';
 import { MapStatesService } from 'src/app/services/map-states.service';
+import {
+  trigger,
+  state,
+  style,
+  animate,
+  transition,
+} from '@angular/animations';
 
 @Component({
   selector: 'app-map',
   templateUrl: './map.component.html',
-  styleUrls: ['./map.component.scss']
+  styleUrls: ['./map.component.scss'],
+  animations: [
+    trigger('fadeIn',[ 
+      transition(':leave', [
+        style({ opacity: 1, transform: 'translate(-20px, 0)' }),
+        animate('300ms', style({opacity: 0 }))
+      ])
+    ])
+  ]
 })
 
 
